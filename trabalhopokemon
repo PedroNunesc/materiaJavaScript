@@ -1,0 +1,84 @@
+let readlineSync = require('readline-sync')
+
+function mostrarMenu(){
+ 
+    console.log("===== BATALHA POKEMON =====")
+    console.log("1. Cadastrar seu time")
+    console.log("2. Cadastrar o time adversario")
+    console.log("3. Batalhar")
+    console.log("4. Encerrar")
+    console.log('===============================')
+}
+
+let bancodedados1 = []
+
+let bancodedados2 = []
+
+function cadastro1(){
+console.log()
+    let nome = readlineSync.question('Nome: ')
+    let tipo = readlineSync.question("Tipo: ")
+    let HP = readlineSync.question("HP: ")
+    let defesa = readlineSync.question("Defesa: ")
+    let ataque = readlineSync.question("Ataque: ")
+
+
+let objetos = {
+    nome: nome,
+    tipo: tipo,
+    HP: HP,
+    defesa: defesa, 
+    ataque: ataque
+}
+
+bancodedados1.push(objetos)
+}
+
+function cadastro2(){
+    console.log()
+        let nome1 = readlineSync.question('Nome: ')
+        let tipo1 = readlineSync.question("Tipo: ")
+        let HP1 = readlineSync.question("HP: ")
+        let defesa1 = readlineSync.question("Defesa: ")
+        let ataque1 = readlineSync.question("Ataque: ")
+    
+    
+    let objetos1 = {
+        nome: nome1,
+        tipo: tipo1,
+        HP: HP1,
+        defesa: defesa1, 
+        ataque: ataque1
+    }
+    bancodedados2
+}
+
+
+function escolha(){
+    let continua = true //
+
+while (continua) {
+
+    console.log(`\n`)
+    mostrarMenu()
+    console.log(`\n`)
+    let opcao = readlineSync.question('ESCOLHA UMA OPCAO:')
+
+    switch (opcao) {
+        case '1':
+            cadastro1()
+            break;
+        case '2':
+            cadastro2()
+            break
+        case '3':
+           batalha()
+            break;
+        case '4':
+            console.log('Encerramento')
+            continua = false
+        break
+    }
+}
+}
+escolha()   
